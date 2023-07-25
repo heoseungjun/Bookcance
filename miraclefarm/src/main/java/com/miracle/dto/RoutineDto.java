@@ -14,7 +14,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class RoutineDto {
-	String r_code;
+	int r_code;
 	String userid;
 	String r_name;
 	String r_explain;

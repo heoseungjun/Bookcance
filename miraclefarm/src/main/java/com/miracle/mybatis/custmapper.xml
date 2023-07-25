@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miracle.mapper.CustMapper">
+	<select id="select" parameterType="String" resultType="CustDto">
+		SELECT * FROM cust WHERE userid=#{userid}
+	</select>
+	<select id="selectall" resultType="CustDto">
+		SELECT * FROM cust
+	</select>
+	<insert id="insert" parameterType="CustDto">
+		INSERT INTO cust VALUES({#userid},#{userpwd})
+	</insert>
+	<delete id="delete" parameterType="String">
+		DELETE FROM cust WHERE userid=#{userid}
+	</delete>
+	<update id="update" parameterType="CustDto">
+		UPDATE cust SET userpwd=#{userpwd} WHERE userid=#{userid}
+	</update>
+</mapper>

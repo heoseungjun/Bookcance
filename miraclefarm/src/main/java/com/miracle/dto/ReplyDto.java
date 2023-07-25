@@ -14,8 +14,8 @@ import lombok.ToString;
 @Setter
 @ToString
 public class ReplyDto {
-	String reply_no;
-	String write_no;
+	int reply_no;
+	int write_no;
 	String userid;
 	String reply_content;
 	Date reply_date;
