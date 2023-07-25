@@ -1,5 +1,7 @@
 package com.miracle.dto;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,5 +18,6 @@ public class CustDto {
 	String userpwd;
 	String username;
 	String tel1, tel2, tel3;
-	String joindate;
+	Date wakeupTime;
+	Date joindate;
 }

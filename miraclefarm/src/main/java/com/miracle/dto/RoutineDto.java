@@ -18,7 +18,6 @@ public class RoutineDto {
 	String userid;
 	String r_name;
 	String r_explain;
-	Date wakeupTime;
 	Date startTime;
 	Date endTime;
 	Date startDate;

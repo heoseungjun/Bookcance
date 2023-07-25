@@ -14,11 +14,11 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CommunityDto {
-	int write_no;
+	int comm_no;
 	String userid;
-	String write_title;
-	String write_content;
-	String write_img;
-	Date write_date;
-	char open_accept;
+	String comm_title;
+	String comm_content;
+	String comm_img;
+	String comm_video;
+	Date comm_date;
 }

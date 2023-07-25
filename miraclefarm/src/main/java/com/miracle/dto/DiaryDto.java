@@ -13,10 +13,12 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ReplyDto {
-	int reply_no;
+public class DiaryDto {
+	int diary_no;
 	String userid;
-	int comm_no;
-	String reply_content;
-	Date reply_date;
+	String diary_title;
+	String diary_content;
+	String diary_img;
+	String diary_video;
+	Date diary_date;
 }

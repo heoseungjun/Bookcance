@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miracle.mapper.DiaryMapper">
+	<select id="select" parameterType="Integer" resultType="DiaryDto">
+		SELECT * FROM diary WHERE diary_no=#{diary_no}
+	</select>
+	<select id="selectall" resultType="diaryDto">
+		SELECT * FROM diary
+	</select>
+	<insert id="insert" parameterType="diaryDto">
+		INSERT INTO diary VALUES({#diary_no},#{diary_content})
+	</insert>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM diary WHERE diary_no=#{diary_no}
+	</delete>
+	<update id="update" parameterType="diaryDto">
+		UPDATE diary SET diary_content=#{diary_content} WHERE diary_no=#{diary_no}
+	</update>
+</mapper>
