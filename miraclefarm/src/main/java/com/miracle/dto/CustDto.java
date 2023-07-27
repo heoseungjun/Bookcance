@@ -17,7 +17,9 @@ public class CustDto {
 	String userid;
 	String userpwd;
 	String username;
-	String tel1, tel2, tel3;
+	String tel1;
+	String tel2;
+	String tel3;
 	Date wakeupTime;
 	Date joindate;
 }
