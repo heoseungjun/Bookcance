@@ -6,17 +6,17 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.miracle.dto.CustDto;
-import com.miracle.service.CustService;
+import com.miracle.dto.CommunityDto;
+import com.miracle.service.CommunityService;
 
 @SpringBootTest
 public class SelectAllTest {
 	@Autowired
-	CustService service;
+	CommunityService service;
 	
 	@Test
 	void contextLoads() {
-		List<CustDto> list;
+		List<CommunityDto> list;
 		try {
 			list = service.choiceall();
 			for(int i=0;i<list.size();i++) System.out.println(list.get(i));

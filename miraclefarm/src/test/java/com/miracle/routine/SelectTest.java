@@ -4,20 +4,20 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.miracle.dto.CustDto;
-import com.miracle.service.CustService;
+import com.miracle.dto.RoutineDto;
+import com.miracle.service.RoutineService;
 
 @SpringBootTest
 public class SelectTest {
 	@Autowired
-	CustService service;
+	RoutineService service;
 	
 	@Test
 	void contextLoads() {
-		CustDto cust;
+		RoutineDto routine;
 		try {
-			cust = service.choice("seungjun");
-			System.out.println(cust);
+			routine = service.choice(100);
+			System.out.println(routine);
 		} catch (Exception e) {
 			System.out.println("Fail to choice");
 		}

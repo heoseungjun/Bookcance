@@ -16,6 +16,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		DELETE FROM community WHERE comm_no=#{comm_no}
 	</delete>
 	<update id="update" parameterType="CommunityDto">
-		UPDATE community SET comm_content=#{comm_content} WHERE comm_no=#{comm_no}
+		UPDATE community SET comm_title=#{comm_title},comm_content=#{comm_content},comm_img=#{comm_img},comm_video=#{comm_video} 
+		WHERE comm_no=#{comm_no}
 	</update>
 </mapper>

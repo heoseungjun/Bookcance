@@ -4,20 +4,20 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.miracle.dto.CustDto;
-import com.miracle.service.CustService;
+import com.miracle.dto.CommunityDto;
+import com.miracle.service.CommunityService;
 
 @SpringBootTest
 public class SelectTest {
 	@Autowired
-	CustService service;
+	CommunityService service;
 	
 	@Test
 	void contextLoads() {
-		CustDto cust;
+		CommunityDto community;
 		try {
-			cust = service.choice("seungjun");
-			System.out.println(cust);
+			community = service.choice(1001);
+			System.out.println(community);
 		} catch (Exception e) {
 			System.out.println("Fail to choice");
 		}

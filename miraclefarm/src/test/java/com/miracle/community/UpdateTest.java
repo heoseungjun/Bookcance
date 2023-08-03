@@ -1,24 +1,22 @@
 package com.miracle.community;
 
-import java.util.Date;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.miracle.dto.CustDto;
-import com.miracle.service.CustService;
+import com.miracle.dto.CommunityDto;
+import com.miracle.service.CommunityService;
 
 @SpringBootTest
 public class UpdateTest {
 	@Autowired
-	CustService service;
+	CommunityService service;
 	
 	@Test
 	void contextLoads() {
-		CustDto cust = new CustDto("seungjun","jun0815","허승준","010","9967","7774",null,null);
+		CommunityDto community = new CommunityDto(1003,"seungjun","미라클모닝 모범 사례 : 김유진 변호사","미라클모닝을 꾸준히 하고 있는 김유진 변호사님을 소개합니다.","","",null);
 		try {
-			service.modify(cust);
+			service.modify(community);
 			System.out.println("success");
 		} catch (Exception e) {
 			e.printStackTrace();
