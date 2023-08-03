@@ -1,6 +1,6 @@
-package com.miracle.cust;
+package com.miracle.community;
 
-import java.util.Date;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,19 +10,18 @@ import com.miracle.dto.CustDto;
 import com.miracle.service.CustService;
 
 @SpringBootTest
-public class UpdateTest {
+public class SelectAllTest {
 	@Autowired
 	CustService service;
 	
 	@Test
 	void contextLoads() {
-		CustDto cust = new CustDto("seungjun","jun0815","허승준","010","9967","7774",null,null);
+		List<CustDto> list;
 		try {
-			service.modify(cust);
-			System.out.println("success");
+			list = service.choiceall();
+			for(int i=0;i<list.size();i++) System.out.println(list.get(i));
 		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Fail to update");
+			System.out.println("Fail to choice");
 		}
 	}
 }

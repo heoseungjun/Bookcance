@@ -1,28 +1,27 @@
-package com.miracle.cust;
-
-import java.util.Date;
+package com.miracle.reply;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.miracle.dto.CustDto;
+import com.miracle.dto.ReplyDto;
 import com.miracle.service.CustService;
+import com.miracle.service.ReplyService;
 
 @SpringBootTest
-public class UpdateTest {
+public class SelectTest {
 	@Autowired
-	CustService service;
+	ReplyService service;
 	
 	@Test
 	void contextLoads() {
-		CustDto cust = new CustDto("seungjun","jun0815","허승준","010","9967","7774",null,null);
+		ReplyDto reply;
 		try {
-			service.modify(cust);
-			System.out.println("success");
+			reply = service.choice(10000);
+			System.out.println(reply);
 		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Fail to update");
+			System.out.println("Fail to choice");
 		}
 	}
 }

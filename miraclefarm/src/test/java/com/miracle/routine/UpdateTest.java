@@ -1,4 +1,4 @@
-package com.miracle.cust;
+package com.miracle.routine;
 
 import java.util.Date;
 
@@ -22,7 +22,7 @@ public class UpdateTest {
 			System.out.println("success");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Fail to update");
+			System.out.println("Fail to choice");
 		}
 	}
 }

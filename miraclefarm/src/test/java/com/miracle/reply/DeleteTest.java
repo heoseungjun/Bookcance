@@ -1,27 +1,24 @@
-package com.miracle.cust;
-
-import java.util.Date;
+package com.miracle.reply;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.miracle.dto.CustDto;
-import com.miracle.service.CustService;
+import com.miracle.service.ReplyService;
 
 @SpringBootTest
 public class DeleteTest {
 	@Autowired
-	CustService service;
+	ReplyService service;
 	
 	@Test
 	void contextLoads() {
 		try {
-			service.remove("user04");
+			service.remove(10001);
 			System.out.println("success");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Fail to delete");
+			System.out.println("Fail to choice");
 		}
 	}
 }

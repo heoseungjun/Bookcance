@@ -1,23 +1,23 @@
-package com.miracle.cust;
+package com.miracle.diary;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.miracle.dto.CustDto;
-import com.miracle.service.CustService;
+import com.miracle.dto.DiaryDto;
+import com.miracle.service.DiaryService;
 
 @SpringBootTest
 public class InsertTest {
 	@Autowired
-	CustService service;
+	DiaryService service;
 	
 	@Test
 	void contextLoads() {
-		CustDto cust = new CustDto("user04","pwd04","유저","010","9999","8888",null,null);
+		DiaryDto diary = new DiaryDto(0,"seungjun","8월 3일 인증","명상, 턱걸이, 독서 성공","","",null);
 		try {
-			service.register(cust);
-			System.out.println(cust);
+			service.register(diary);
+			System.out.println(diary);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Fail to insert");

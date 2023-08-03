@@ -1,4 +1,4 @@
-package com.miracle.cust;
+package com.miracle.routine;
 
 import java.util.Date;
 
@@ -10,19 +10,18 @@ import com.miracle.dto.CustDto;
 import com.miracle.service.CustService;
 
 @SpringBootTest
-public class UpdateTest {
+public class DeleteTest {
 	@Autowired
 	CustService service;
 	
 	@Test
 	void contextLoads() {
-		CustDto cust = new CustDto("seungjun","jun0815","허승준","010","9967","7774",null,null);
 		try {
-			service.modify(cust);
+			service.remove("user04");
 			System.out.println("success");
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Fail to update");
+			System.out.println("Fail to choice");
 		}
 	}
 }

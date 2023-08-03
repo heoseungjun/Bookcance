@@ -1,23 +1,23 @@
-package com.miracle.cust;
+package com.miracle.reply;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.miracle.dto.CustDto;
-import com.miracle.service.CustService;
+import com.miracle.dto.ReplyDto;
+import com.miracle.service.ReplyService;
 
 @SpringBootTest
 public class InsertTest {
 	@Autowired
-	CustService service;
+	ReplyService service;
 	
 	@Test
 	void contextLoads() {
-		CustDto cust = new CustDto("user04","pwd04","유저","010","9999","8888",null,null);
+		ReplyDto reply = new ReplyDto(0,"seohyeon",1002,"환영합니다!",null);
 		try {
-			service.register(cust);
-			System.out.println(cust);
+			service.register(reply);
+			System.out.println(reply);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Fail to insert");

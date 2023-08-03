@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM community
 	</select>
 	<insert id="insert" parameterType="CommunityDto">
-		INSERT INTO community VALUES({#comm_no},#{comm_content})
+		INSERT INTO community VALUES(#{comm_no},#{userid},#{comm_title},#{comm_content},#{comm_img},#{comm_video},CURRENT_DATE())
 	</insert>
 	<delete id="delete" parameterType="Integer">
 		DELETE FROM community WHERE comm_no=#{comm_no}

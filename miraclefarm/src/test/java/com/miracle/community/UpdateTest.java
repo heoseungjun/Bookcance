@@ -1,4 +1,4 @@
-package com.miracle.cust;
+package com.miracle.community;
 
 import java.util.Date;
 
