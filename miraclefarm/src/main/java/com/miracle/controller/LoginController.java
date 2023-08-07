@@ -23,26 +23,23 @@ public class LoginController {
 	
 	@RequestMapping("/loginimpl")
 	public ModelAndView loginimpl(HttpServletRequest req, ModelAndView mav, HttpSession session) {
-		String userid = req.getParameter("email");
-		String userpwd = req.getParameter("password");
-		
+		String userid = req.getParameter("userid");
+		String userpwd = req.getParameter("userpwd");
 		CustDto cust = null;
 		
 		try {
 			cust = service.choice(userid);
 			
 			if(cust == null) {
-				System.out.println("사용자 정보 없음");
 				mav.setViewName("redirect:login");
 			}
 			else {
 				if(cust.getUserpwd().equals(userpwd)) {
 					session.getAttribute(userid);
 					session.getAttribute(userpwd);
-					mav.setViewName("redirect:main");
+					mav.setViewName("redirect:/");
 				}
 				else {
-					System.out.println("비밀번호 불일치");
 					mav.setViewName("redirect:login");
 				}
 			}
