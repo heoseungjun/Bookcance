@@ -10,15 +10,20 @@ function loginchk() {
 	
 	if(email == "") {
 		alert("이메일을 입력해주세요");
-		form.email.focus();
+		email.focus();
 		return;
 	}
 	else if(password == "") {
 		alert("비밀번호를 입력해주세요");
-		form.password.focus();
+		password.focus();
 		return;
 	}
 }
+
+$(document).ready(function(){
+	var result = $('#result').val();
+	if(result == null) alert("아이디 혹은 비밀번호를 잘못 입력하셨습니다");
+})
 </script>
 <head>
     <meta charset="utf-8">
@@ -59,6 +64,7 @@ function loginchk() {
                                         <h1 class="h4 text-gray-900 mb-4">환영합니다, 미라클 농장입니다</h1>
                                     </div>
                                     <form th:action="@{/loginimpl}" class="user" id="loginform" name="loginform" onsubmit="loginchk()" method="post">
+                                        <input type="hidden" id="result" th:value="${session.result}"></input>
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="userid" name="userid" aria-describedby="emailHelp"
