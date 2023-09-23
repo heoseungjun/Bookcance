@@ -9,13 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.miracle.dto.CustDto;
-import com.miracle.service.CustService;
+import com.miracle.dto.UserDto;
+import com.miracle.service.UserService;
 
 @Controller
 public class LoginController {
 	@Autowired
-	CustService service;
+	UserService service;
 	
 	@RequestMapping("/login")
 	public String login() {
@@ -26,7 +26,7 @@ public class LoginController {
 	public ModelAndView loginimpl(HttpServletRequest req, ModelAndView mav, Model model, HttpSession session) {
 		String userid = req.getParameter("userid");
 		String userpwd = req.getParameter("userpwd");
-		CustDto cust = null;
+		UserDto cust = null;
 		
 		try {
 			cust = service.choice(userid);

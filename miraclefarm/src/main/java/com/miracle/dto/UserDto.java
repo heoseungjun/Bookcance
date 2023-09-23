@@ -13,12 +13,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class CommunityDto {
-	int comm_no;
+public class UserDto {
 	String userid;
-	String comm_title;
-	String comm_content;
-	String comm_img;
-	String comm_video;
-	Date comm_date;
+	String userpwd;
+	String username;
+	Date joindate;
 }

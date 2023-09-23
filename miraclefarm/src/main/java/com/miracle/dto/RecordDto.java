@@ -13,12 +13,18 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class DiaryDto {
-	int diary_no;
+public class RecordDto {
+	int book_no;
 	String userid;
-	String diary_title;
-	String diary_content;
-	String diary_img;
-	String diary_video;
-	Date diary_date;
+	String author;
+	String publish;
+	String book_title;
+	String book_content;
+	String book_memory;
+	String book_feel;
+	String book_reason;
+	String book_img;
+	Date read_start;
+	Date read_end;
+	Date writedate;
 }

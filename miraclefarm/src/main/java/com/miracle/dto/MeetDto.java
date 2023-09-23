@@ -13,15 +13,13 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class RoutineDto {
-	int r_code;
+public class MeetDto {
+	int meet_no;
 	String userid;
-	String r_name;
-	String r_explain;
-	Date startTime;
-	Date endTime;
-	Date startDate;
-	Date endDate;
-	int count;
-	char challenge_apply;
+	String meet_title;
+	String meet_content;
+	int meet_heart;
+	String meet_result;
+	String meet_img;
+	Date writedate;
 }

@@ -13,11 +13,12 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ReplyDto {
-	int reply_no;
-	String userid;
-	int meet_no;
+public class ReviewDto {
 	int review_no;
-	String reply_content;
+	String userid;
+	String review_title;
+	String review_content;
+	int review_heart;
+	String review_img;
 	Date writedate;
 }

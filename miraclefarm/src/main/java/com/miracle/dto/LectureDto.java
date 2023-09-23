@@ -1,7 +1,5 @@
 package com.miracle.dto;
 
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,13 +11,14 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class CustDto {
+public class LectureDto {
+	int course_no;
 	String userid;
-	String userpwd;
-	String username;
-	String tel1;
-	String tel2;
-	String tel3;
-	Date wakeupTime;
-	Date joindate;
+	String course_title;
+	String instructor;
+	int totaltime;
+	int learnTime;
+	int process;
+	String course_info;
+	String instructor_info;
 }
