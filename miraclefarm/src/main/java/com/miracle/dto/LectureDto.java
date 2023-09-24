@@ -13,7 +13,6 @@ import lombok.ToString;
 @ToString
 public class LectureDto {
 	int course_no;
-	String userid;
 	String course_title;
 	String instructor;
 	int totaltime;

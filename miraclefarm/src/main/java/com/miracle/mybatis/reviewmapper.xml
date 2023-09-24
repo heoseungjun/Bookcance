@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miracle.mapper.CommunityMapper">
+	<select id="select" parameterType="Integer" resultType="CommunityDto">
+		SELECT * FROM community WHERE comm_no=#{comm_no}
+	</select>
+	<select id="selectall" resultType="CommunityDto">
+		SELECT * FROM community
+	</select>
+	<insert id="insert" parameterType="CommunityDto">
+		INSERT INTO community VALUES(#{comm_no},#{userid},#{comm_title},#{comm_content},#{comm_img},#{comm_video},CURRENT_DATE())
+	</insert>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM community WHERE comm_no=#{comm_no}
+	</delete>
+	<update id="update" parameterType="CommunityDto">
+		UPDATE community SET comm_title=#{comm_title},comm_content=#{comm_content},comm_img=#{comm_img},comm_video=#{comm_video} 
+		WHERE comm_no=#{comm_no}
+	</update>
+</mapper>

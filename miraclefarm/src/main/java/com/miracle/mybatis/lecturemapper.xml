@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miracle.mapper.LectureMapper">
+	<select id="select" parameterType="Integer" resultType="LectureDto">
+		SELECT * FROM lecture WHERE course_no=#{course_no}
+	</select>
+	<select id="selectall" resultType="lectureDto">
+		SELECT * FROM lecture
+	</select>
+	<insert id="insert" parameterType="lectureDto">
+		INSERT INTO lecture VALUES(#{course_no},#{course_title},#{instructor},#{totaltime},#{learntime},#{process},#{course_info},#{instructor_info})
+	</insert>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM lecture WHERE course_no=#{course_no}
+	</delete>
+	<update id="update" parameterType="lectureDto">
+		UPDATE lecture SET course_title=#{course_title},instructor=#{instructor},totaltime=#{totaltime},learntime=#{learntime},process=#{process},course_info=#{course_info},instructor_info=#{instructor_info}
+		WHERE course_no=#{course_no}
+	</update>
+</mapper>
