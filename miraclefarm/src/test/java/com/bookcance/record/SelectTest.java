@@ -1,25 +1,23 @@
-package com.miracle.reply;
-
-import java.util.List;
+package com.bookcance.record;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.miracle.dto.ReplyDto;
-import com.miracle.service.ReplyService;
+import com.bookcance.dto.RecordDto;
+import com.bookcance.service.RecordService;
 
 @SpringBootTest
-public class SelectAllTest {
+public class SelectTest {
 	@Autowired
-	ReplyService service;
+	RecordService service;
 	
 	@Test
 	void contextLoads() {
-		List<ReplyDto> list;
+		RecordDto record;
 		try {
-			list = service.choiceall();
-			for(int i=0;i<list.size();i++) System.out.println(list.get(i));
+			record = service.choice(2);
+			System.out.println(record);
 		} catch (Exception e) {
 			System.out.println("Fail to choice");
 		}

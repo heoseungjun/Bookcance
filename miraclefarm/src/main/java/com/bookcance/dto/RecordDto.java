@@ -24,7 +24,7 @@ public class RecordDto {
 	String book_feel;
 	String book_reason;
 	String book_img;
-	Date read_start;
-	Date read_end;
+	String read_start;
+	String read_end;
 	Date writedate;
 }
