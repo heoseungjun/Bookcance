@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bookcance.mapper.RecordMapper">
+	<select id="select" parameterType="Integer" resultType="RecordDto">
+		SELECT * FROM record WHERE book_no=#{book_no}
+	</select>
+	<select id="selectall" resultType="RecordDto">
+		SELECT * FROM record
+	</select>
+	<insert id="insert" parameterType="RecordDto">
+		INSERT INTO record VALUES(#{book_no},#{userid},#{author},#{publish},#{book_title},#{book_content},
+								   #{book_memory},#{book_feel},#{book_reason},#{read_start},#{read_end},#{book_img},CURRENT_DATE())
+	</insert>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM record WHERE book_no=#{book_no}
+	</delete>
+	<update id="update" parameterType="RecordDto">
+		UPDATE record SET author=#{author},publish=#{publish},book_title=#{book_title},book_content=#{book_content},
+						   book_memory=#{book_memory},book_feel=#{book_feel},book_reason=#{book_reason},read_start=#{read_start},
+						   read_end=#{read_end},book_img=#{book_img},writedate=CURRENT_DATE()
+		WHERE book_no=#{book_no}
+	</update>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bookcance.mapper.ReviewMapper">
+	<select id="select" parameterType="Integer" resultType="ReviewDto">
+		SELECT * FROM review WHERE review_no=#{review_no}
+	</select>
+	<select id="selectall" resultType="ReviewDto">
+		SELECT * FROM review
+	</select>
+	<insert id="insert" parameterType="ReviewDto">
+		INSERT INTO review VALUES(#{review_no},#{userid},#{review_title},#{review_content},#{review_heart},#{review_img},CURRENT_DATE())
+	</insert>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM review WHERE review_no=#{review_no}
+	</delete>
+	<update id="update" parameterType="ReviewDto">
+		UPDATE review SET review_title=#{review_title},review_content=#{review_content},review_heart=#{review_heart},review_img=#{review_img},writedate=CURRENT_DATE() 
+		WHERE review_no=#{review_no}
+	</update>
+</mapper>

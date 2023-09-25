@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bookcance.mapper.UserMapper">
+	<select id="select" parameterType="String" resultType="UserDto">
+		SELECT * FROM user WHERE userid=#{userid}
+	</select>
+	<select id="selectall" resultType="UserDto">
+		SELECT * FROM user
+	</select>
+	<insert id="insert" parameterType="UserDto">
+		INSERT INTO user VALUES(#{userid},#{userpwd},#{username},CURRENT_TIMESTAMP())
+	</insert>
+	<delete id="delete" parameterType="String">
+		DELETE FROM user WHERE userid=#{userid}
+	</delete>
+	<update id="update" parameterType="UserDto">
+		UPDATE user SET userpwd=#{userpwd},username=#{username},joindate=CURRENT_TIMESTAMP()
+		WHERE userid=#{userid}
+	</update>
+</mapper>
