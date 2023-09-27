@@ -16,8 +16,7 @@ import lombok.ToString;
 public class ReplyDto {
 	int reply_no;
 	String userid;
-	int meet_no;
-	int review_no;
+	int board_no;
 	String reply_content;
 	Date writedate;
 }

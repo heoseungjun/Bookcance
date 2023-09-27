@@ -1,4 +1,4 @@
-package com.bookcance.review;
+package com.bookcance.board;
 
 import java.util.List;
 
@@ -6,17 +6,17 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.bookcance.dto.ReviewDto;
-import com.bookcance.service.ReviewService;
+import com.bookcance.dto.BoardDto;
+import com.bookcance.service.BoardService;
 
 @SpringBootTest
 public class SelectAllTest {
 	@Autowired
-	ReviewService service;
+	BoardService service;
 	
 	@Test
 	void contextLoads() {
-		List<ReviewDto> list;
+		List<BoardDto> list;
 		try {
 			list = service.choiceall();
 			for(int i=0;i<list.size();i++) System.out.println(list.get(i));

@@ -1,24 +1,23 @@
-package com.bookcance.meet;
+package com.bookcance.reply;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.bookcance.dto.MeetDto;
-import com.bookcance.dto.RecordDto;
-import com.bookcance.service.MeetService;
+import com.bookcance.dto.ReplyDto;
+import com.bookcance.service.ReplyService;
 
 @SpringBootTest
 public class InsertTest {
 	@Autowired
-	MeetService service;
+	ReplyService service;
 	
 	@Test
 	void contextLoads() {
-		MeetDto diary = new MeetDto(0, "wjdgk","oo", "xx", 0, null, null, null);
+		ReplyDto reply = new ReplyDto(0, "qhsan", 101, "혹시 모임 장소는 어떻게 될까요?", null);
 		try {
-			service.register(diary);
-			System.out.println(diary);
+			service.register(reply);
+			System.out.println(reply);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Fail to insert");

@@ -1,24 +1,23 @@
-package com.bookcance.meet;
+package com.bookcance.reply;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.bookcance.dto.MeetDto;
-import com.bookcance.service.MeetService;
+import com.bookcance.service.ReplyService;
 
 @SpringBootTest
-public class SelectTest {
+public class DeleteTest {
 	@Autowired
-	MeetService service;
+	ReplyService service;
 	
 	@Test
 	void contextLoads() {
-		MeetDto meet;
 		try {
-			meet = service.choice(100);
-			System.out.println(meet);
+			service.remove(1001);
+			System.out.println("success");
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("Fail to choice");
 		}
 	}

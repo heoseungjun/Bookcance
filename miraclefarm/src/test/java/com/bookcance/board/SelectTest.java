@@ -1,25 +1,23 @@
-package com.bookcance.meet;
-
-import java.util.List;
+package com.bookcance.board;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.bookcance.dto.MeetDto;
-import com.bookcance.service.MeetService;
+import com.bookcance.dto.BoardDto;
+import com.bookcance.service.BoardService;
 
 @SpringBootTest
-public class SelectAllTest {
+public class SelectTest {
 	@Autowired
-	MeetService service;
+	BoardService service;
 	
 	@Test
 	void contextLoads() {
-		List<MeetDto> list;
+		BoardDto board;
 		try {
-			list = service.choiceall();
-			for(int i=0;i<list.size();i++) System.out.println(list.get(i));
+			board = service.choice(100);
+			System.out.println(board);
 		} catch (Exception e) {
 			System.out.println("Fail to choice");
 		}
